@@ -2,12 +2,6 @@
 import React from 'react';
 import GroupListItem from './GroupListItem';
 
-interface Group {
-  name: string;
-  description: string;
-  image: string;
-}
-
 const RightSidebar: React.FC = () => {
   const joinedGroups: Group[] = [
     {

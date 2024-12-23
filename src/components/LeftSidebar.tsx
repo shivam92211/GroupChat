@@ -3,11 +3,6 @@ import React from 'react';
 import Image from 'next/image';
 import GroupListItem from './GroupListItem';
 
-interface Group {
-  name: string;
-  description: string;
-  image: string;
-}
 
 const LeftSidebar: React.FC = () => {
   const groups: Group[] = [

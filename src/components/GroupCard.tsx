@@ -3,12 +3,6 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface GroupCardProps {
-  groupImage: string;
-  groupTitle: string;
-  groupInfo: string;
-  joinLink?: string;
-}
 
 const GroupCard: React.FC<GroupCardProps> = ({
   groupImage,

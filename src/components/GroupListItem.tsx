@@ -2,11 +2,6 @@
 import React from 'react';
 import Image from 'next/image';
 
-interface GroupListItemProps {
-  groupName: string;
-  groupDescription: string;
-  groupImage: string;
-}
 
 const GroupListItem: React.FC<GroupListItemProps> = ({
   groupName,

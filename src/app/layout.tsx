@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "../components/Header"; // Adjust the path if necessary
@@ -14,11 +13,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
       <body>
-        {/* Header Component */}
-        <Header />
+        {/* Header */}
+        <Header
+          logoText="MyApp"
+          navLinks={[
+            { name: 'Home', href: '/' },
+            { name: 'My Groups', href: '/my-groups' },
+            { name: 'About', href: '/about' },
+          ]}
+          groupCount={19}
+        />
 
         {/* Main Content */}
         <main >
