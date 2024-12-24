@@ -18,7 +18,7 @@ const RightSidebar: React.FC = () => {
   ];
 
   return (
-    <div className="w-1/4 bg-white p-4 shadow-md hidden lg:block" id="right-sidebar">
+    <div className="w-1/3 bg-white p-4 pt-6 shadow-md hidden lg:block" id="right-sidebar">
       <h3 className="font-semibold mb-2">Groups You Joined</h3>
       <ul>
         {joinedGroups.map((group, index) => (

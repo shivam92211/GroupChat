@@ -34,7 +34,7 @@ const LeftSidebar: React.FC = () => {
   ];
 
   return (
-    <div className="w-1/4 bg-white p-4 shadow-md hidden md:block" id="left-sidebar">
+    <div className="w-1/3 bg-white p-4 pt-6 shadow-md hidden md:block" id="left-sidebar">
       {/* Profile Section */}
       <div className="flex flex-col items-center mb-4">
         <Image

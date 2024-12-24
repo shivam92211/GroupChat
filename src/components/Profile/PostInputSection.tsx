@@ -24,7 +24,7 @@ const PostInputSection: React.FC = () => {
         value={postContent}
         onChange={(e) => setPostContent(e.target.value)}
       ></textarea>
-      <button onClick={handlePost} className="bg-pink-500 text-white rounded-lg px-4 py-2">
+      <button onClick={handlePost} className="bg-customPink text-white rounded-lg px-4 py-2">
         Post
       </button>
     </div>

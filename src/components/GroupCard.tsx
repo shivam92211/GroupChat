@@ -22,7 +22,7 @@ const GroupCard: React.FC<GroupCardProps> = ({
       <h3 className="font-semibold mt-2">{groupTitle}</h3>
       <p className="text-gray-500">{groupInfo}</p>
       <Link href={joinLink} passHref>
-        <button className="bg-pink-500 text-white rounded p-2 mt-2 hover:bg-pink-600 transition">
+        <button className="bg-customPink text-white rounded p-2 mt-2 hover:bg-pink-600 transition">
           Join Group
         </button>
       </Link>

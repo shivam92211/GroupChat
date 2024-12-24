@@ -6,9 +6,9 @@ import Image from 'next/image';
 
 const ProfileSection: React.FC = () => {
   return (
-    <div className="flex flex-col rounded-lg p-6 mb-4 relative">
+    <div className="flex flex-col rounded-lg p-6 mb-4 relative pt-20">
       {/* Background Image */}
-      <div className="h-40 w-full relative">
+      <div className="h-[16rem] w-full relative">
         <Image
           src="/assets/dine2.png"
           alt="Background"
@@ -30,7 +30,7 @@ const ProfileSection: React.FC = () => {
           <h2 className="text-xl font-semibold">Pro Investor</h2>
           <p className="text-gray-600">Panchkula, India</p>
         </div>
-        <button className="ml-auto bg-pink-500 text-white rounded-lg px-4 py-2">Share</button>
+        <button className="ml-auto bg-customPink text-white rounded-lg px-4 py-2">Share</button>
       </div>
       <p className="mt-4">
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et

@@ -49,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({
   }, [isMenuOpen]);
 
   return (
-    <header className="flex justify-between items-center p-4 bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+    <header className="flex justify-between items-center p-4 mb-4= bg-white shadow-md fixed top-0 left-0 right-0 z-50">
       {/* Logo */}
       <div className="text-2xl font-bold">{logoText}</div>
 
@@ -76,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-pink-500"
+            className="h-6 w-6 text-customPink"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -91,7 +91,7 @@ const Header: React.FC<HeaderProps> = ({
         </button>
         <button
           onClick={onCreateGroup}
-          className="bg-pink-500 text-white rounded-lg px-4 py-2 hover:bg-pink-600 transition"
+          className="bg-customPink text-white rounded-lg px-4 py-2 hover:bg-pink-600 transition"
         >
           Create Group
         </button>
@@ -194,7 +194,7 @@ const Header: React.FC<HeaderProps> = ({
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-pink-500"
+                className="h-6 w-6 text-customPink"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -209,7 +209,7 @@ const Header: React.FC<HeaderProps> = ({
                 }
                 setIsMenuOpen(false);
               }}
-              className="bg-pink-500 text-white rounded-lg px-4 py-2 hover:bg-pink-600 transition"
+              className="bg-customPink text-white rounded-lg px-4 py-2 hover:bg-pink-600 transition"
             >
               Create Group
             </button>
