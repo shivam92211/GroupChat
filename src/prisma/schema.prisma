@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  email     String   @unique
+  name      String
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  createdGroups Group[]  @relation("GroupCreator")
+  posts         Post[]
+  
+  // Many-to-many relations using explicit joining collections
+  memberOf      UsersInGroups[]
+  adminOf       AdminsInGroups[]
+}
+
+model Group {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  creator     User     @relation("GroupCreator", fields: [creatorId], references: [id])
+  creatorId   String   @db.ObjectId
+  posts       Post[]
+  
+  // Many-to-many relations using explicit joining collections
+  members     UsersInGroups[]
+  admins      AdminsInGroups[]
+}
+
+// Joining collection for Users and Groups (members)
+model UsersInGroups {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String   @db.ObjectId
+  group     Group    @relation(fields: [groupId], references: [id])
+  groupId   String   @db.ObjectId
+  joinedAt  DateTime @default(now())
+
+  @@unique([userId, groupId])
+}
+
+// Joining collection for Admins and Groups
+model AdminsInGroups {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String   @db.ObjectId
+  group     Group    @relation(fields: [groupId], references: [id])
+  groupId   String   @db.ObjectId
+  addedAt   DateTime @default(now())
+
+  @@unique([userId, groupId])
+}
+
+model Post {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String   @db.ObjectId
+  group     Group    @relation(fields: [groupId], references: [id])
+  groupId   String   @db.ObjectId
+}
